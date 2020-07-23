@@ -18,6 +18,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+
     @PostMapping
     @RequestMapping("/login")
     public ApiResponse getLogin(@RequestBody UserLogin userLogin) {
@@ -34,9 +35,9 @@ public class UserController {
     }
 
     @GetMapping
-    @RequestMapping("/hello")
-    public ApiResponse hello() {
-        return ApiResponse.builder().statusCode(200).status("success").result(null).build();
+    @RequestMapping("/test")
+    public ApiResponse getString(){
+        return  ApiResponse.builder().statusCode(200).status("success").result("testne").build();
     }
 
 

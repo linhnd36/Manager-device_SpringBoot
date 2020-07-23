@@ -1,9 +1,12 @@
 package com.linhnd.managerdevice.services;
 
 
+import com.linhnd.managerdevice.models.database.Status;
 import com.linhnd.managerdevice.models.database.Users;
 import com.linhnd.managerdevice.models.rest.UserLogin;
 import com.linhnd.managerdevice.models.rest.UserResponse;
+import com.linhnd.managerdevice.repositorys.RoleRepository;
+import com.linhnd.managerdevice.repositorys.StatusRepository;
 import com.linhnd.managerdevice.repositorys.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +18,7 @@ public class UserService {
 
     @Autowired
     private UsersRepository usersRepository;
+
 
     public UserResponse getLogin(UserLogin userLogin) {
         Users users = usersRepository.getLogin(userLogin.getUsername(), userLogin.getPassword());

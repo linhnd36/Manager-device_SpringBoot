@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -14,4 +15,5 @@ public class ApiResponse {
     private int statusCode;
     private String status;
     private Object result;
+
 }
