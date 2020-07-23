@@ -37,7 +37,7 @@ public class UserController {
     @GetMapping
     @RequestMapping("/test")
     public ApiResponse getString(){
-        return  ApiResponse.builder().statusCode(200).status("success").result("testne").build();
+        return  ApiResponse.builder().statusCode(200).status("success").result("ahihihi").build();
     }
 
 
