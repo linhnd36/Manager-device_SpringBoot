@@ -37,5 +37,8 @@ public class Users implements Serializable {
     @Column(name = "status_id", nullable = false)
     private String statusId;
 
+    @OneToOne
+    @JoinColumn(name = "role_id", insertable = false, updatable = false)
+    private Role role;
 
 }

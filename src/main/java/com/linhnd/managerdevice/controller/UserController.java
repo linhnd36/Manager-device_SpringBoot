@@ -23,7 +23,11 @@ public class UserController {
     @RequestMapping("/login")
     public ApiResponse getLogin(@RequestBody UserLogin userLogin) {
         UserResponse userResponse = userService.getLogin(userLogin);
-        return ApiResponse.builder().statusCode(200).status("success").result(userResponse).build();
+        if(userResponse != null){
+            return ApiResponse.builder().statusCode(200).status("success").result(userResponse).build();
+        }else{
+            return  ApiResponse.builder().statusCode(100).status("failed").result("failed").build();
+        }
     }
 
 
@@ -39,6 +43,8 @@ public class UserController {
     public ApiResponse getString(){
         return  ApiResponse.builder().statusCode(200).status("success").result("ahihihi").build();
     }
+
+
 
 
 }
